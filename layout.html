@@ -1,0 +1,60 @@
+<html><head><style>
+	div{
+		background: lightblue;
+		width:100px;
+		height:100px;
+		border: 1px solid black;
+		margin: 1px;
+	}
+	.ignore{
+		background: none;
+    width: 20%;
+    height: 100%;
+    display: inline-block;
+    vertical-align:top;
+    border: none;
+	}
+	</style></head><body>
+<div class="ignore">
+	
+<div>no display</div>
+<div>no display</div>
+
+<div style="
+    display: inline;
+">inline (width &amp; height ignored)</div>
+
+<div style="
+    display: inline-block;
+">inline-block</div>
+
+<div style="">no display</div><div style="
+    display: inline-block;
+">inline-block (doesnt work if other div is not inline / inline-block)</div>
+</div>
+
+<div class="ignore">
+	<div style="
+    display: inline-block;
+"><div style="
+    display: inline;
+    "><br>inlineinline</div></div>
+	<div style="
+    display: inline-block;
+    width: 120px;
+">inline-block displays wierdly in this case.  use vertical-align to avoid</div>
+
+<div class="" style="background: lightgreen;height:200px;display:flex;flex-direction:column">
+        <p>display:flex</p>
+        <div style="flex-grow:1">flex-direction: column</div>
+</div>
+<div class="" style="background: lightgreen;width:300px;height:50px;display:flex;">
+        <p>display:flex</p>
+        <div style="flex-grow:1;height:50px;">flex-grow: 1  grows to fit remaining space</div>
+</div>
+
+	</div>
+
+</body>
+
+</html>
